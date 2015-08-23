@@ -17,10 +17,10 @@ fi
 if [ ! -d $OPENSHIFT_DATA_DIR/jdk8 ]
         then
                 cd $OPENSHIFT_DATA_DIR
-                wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz
+                wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
-                mv jdk1.8.0_60 jdk8
+                mv jdk1.8.0_20 jdk8
 fi
 
 if [ ! -d $OPENSHIFT_DATA_DIR/maven ]
