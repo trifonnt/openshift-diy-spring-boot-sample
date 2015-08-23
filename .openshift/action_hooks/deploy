@@ -17,7 +17,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/logs ]
 				mkdir logs
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR$JAVA_HOME ]
+if [ ! -d ${OPENSHIFT_DATA_DIR}jdk8 ]
         then
                 cd $OPENSHIFT_DATA_DIR
                 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
@@ -41,7 +41,7 @@ export MAVEN_BIN=$MAVEN_HOME/bin
 export M2=$OPENSHIFT_DATA_DIR$MAVEN_BIN
 export MAVEN_OPTS="-Xms384m -Xmx412m"
 export JAVA_BIN=$JAVA_HOME/bin
-export JDK=$OPENSHIFT_DATA_DIR$JAVA_BIN
+export JDK=${OPENSHIFT_DATA_DIR}jdk8/bin
 export PATH=$JDK:$M2:$PATH
 
 mvn -s settings.xml clean install
