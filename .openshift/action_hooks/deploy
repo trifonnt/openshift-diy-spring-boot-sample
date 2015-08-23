@@ -14,7 +14,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/logs ]
 				mkdir logs
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/jdk8]
+if [ ! -d $OPENSHIFT_DATA_DIR/jdk8 ]
         then
                 cd $OPENSHIFT_DATA_DIR
                 wget http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz
