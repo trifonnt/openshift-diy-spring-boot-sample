@@ -20,6 +20,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/jdk8]
                 wget http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
+                mv jdk-8u60-linux-x64 jdk8
 fi
 
 if [ ! -d $OPENSHIFT_DATA_DIR/maven ]
@@ -28,6 +29,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/maven ]
                 wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
+                mv apache-maven-3.3.3-bin maven
 fi
 
 
