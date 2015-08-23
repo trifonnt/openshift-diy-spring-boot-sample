@@ -34,10 +34,11 @@ fi
 
 
 cd $OPENSHIFT_REPO_DIR
-export MAVEN_HOME=$OPENSHIFT_DATA_DIR/maven
-export M2=$MAVEN_HOME/bin
+export MAVEN_BIN=maven/bin
+export M2=$OPENSHIFT_DATA_DIR$MAVEN_BIN
 export MAVEN_OPTS="-Xms384m -Xmx412m"
-export JAVA_HOME=$OPENSHIFT_DATA_DIR/jdk8
-export PATH=$JAVA_HOME/bin:$M2:$PATH
+export JAVA_BIN=jdk8/bin
+export JDK=$OPENSHIFT_DATA_DIR$JAVA_BIN
+export PATH=$JDK:$M2:$PATH
 
 mvn -s settings.xml clean install
