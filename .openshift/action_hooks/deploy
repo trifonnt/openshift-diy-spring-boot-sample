@@ -29,7 +29,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/maven ]
                 wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
-                mv apache-maven-3.3.3-bin maven
+                mv apache-maven-3.3.3 maven
 fi
 
 
