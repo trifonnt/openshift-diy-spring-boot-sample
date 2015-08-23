@@ -5,8 +5,7 @@ source $OPENSHIFT_CARTRIDGE_SDK_BASH
 set -x
 
 export JAVA_HOME=jdk8
-export JAVA_BIN=$JAVA_HOME/bin
-export JDK=$OPENSHIFT_DATA_DIR$JAVA_BIN
+export JDK=${OPENSHIFT_DATA_DIR}${JAVA_HOME}/bin
 
 export PATH=$JDK:$PATH
 

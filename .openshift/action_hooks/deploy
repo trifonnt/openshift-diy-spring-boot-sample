@@ -5,43 +5,42 @@ set -x
 export MAVEN_HOME=maven
 export JAVA_HOME=jdk8
 
-if [ ! -d $OPENSHIFT_DATA_DIR/m2/repository ]
+if [ ! -d ${OPENSHIFT_DATA_DIR}m2/repository ]
         then
                 cd $OPENSHIFT_DATA_DIR
 				mkdir m2/repository                
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR/logs ]
+if [ ! -d ${OPENSHIFT_DATA_DIR}logs ]
         then
                 cd $OPENSHIFT_DATA_DIR
 				mkdir logs
 fi
 
-if [ ! -d ${OPENSHIFT_DATA_DIR}jdk8 ]
+if [ ! -d ${OPENSHIFT_DATA_DIR}$JAVA_HOME ]
         then
                 cd $OPENSHIFT_DATA_DIR
                 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
-                mv jdk1.8.0_20 jdk8
+                mv jdk1.8.0_20 $JAVA_HOME
 fi
 
-if [ ! -d $OPENSHIFT_DATA_DIR$MAVEN_HOME ]
+if [ ! -d ${OPENSHIFT_DATA_DIR}$MAVEN_HOME ]
         then
                 cd $OPENSHIFT_DATA_DIR
                 wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
                 tar xvf *.tar.gz
                 rm -f *.tar.gz
-                mv apache-maven-3.3.3 maven
+                mv apache-maven-3.3.3 $MAVEN_HOME
 fi
 
 
 cd $OPENSHIFT_REPO_DIR
-export MAVEN_BIN=$MAVEN_HOME/bin
-export M2=$OPENSHIFT_DATA_DIR$MAVEN_BIN
+export M2=${OPENSHIFT_DATA_DIR}${MAVEN_HOME}/bin
 export MAVEN_OPTS="-Xms384m -Xmx412m"
-export JAVA_BIN=$JAVA_HOME/bin
-export JDK=${OPENSHIFT_DATA_DIR}jdk8/bin
+export JDK=${OPENSHIFT_DATA_DIR}${JAVA_HOME}/bin
+
 export PATH=$JDK:$M2:$PATH
 
 mvn -s settings.xml clean install
