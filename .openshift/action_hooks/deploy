@@ -1,9 +1,9 @@
 #!/bin/bash
 
+set -x
+
 export MAVEN_HOME=maven
 export JAVA_HOME=jdk8
-
-set -x
 
 if [ ! -d $OPENSHIFT_DATA_DIR/m2/repository ]
         then
