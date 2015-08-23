@@ -3,7 +3,7 @@
 set -x
 
 export MAVEN_HOME=maven
-#export JAVA_HOME=jdk8
+export JAVA_HOME="jdk8"
 
 if [ ! -d ${OPENSHIFT_DATA_DIR}m2/repository ]
         then
