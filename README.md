@@ -3,11 +3,15 @@
 Before we can start building the application, we need to have an OpenShift free account and RedHat client tools(rhc) installed.
 
 # Step 1: Create DIY application
+Setup connection to OpenShift Broker
+
+	rhc setup --server openshift.redhat.com -l user@mail.com
 
 To create an application using client tools, type the following command:
 
     rhc app create boot diy-0.1
 
+		
 This command creates an application *boot* using *DIY* cartridge and clones the repository to *boot* directory.
 
 # Step 2: Add PostgreSQL cartridge to application
