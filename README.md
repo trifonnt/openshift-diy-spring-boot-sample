@@ -1,6 +1,6 @@
 # Prerequisite
 
-Before we can start building the application, we need to have an OpenShift free account and client tools installed.
+Before we can start building the application, we need to have an OpenShift free account and RedHat client tools(rhc) installed.
 
 # Step 1: Create DIY application
 
