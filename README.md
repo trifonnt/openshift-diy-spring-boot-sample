@@ -1,6 +1,6 @@
 # Prerequisite
 
-Before we can start building the application, we need to have an OpenShift free or paid account and RedHat client tools(rhc) installed. For instructions how to install rhc please look [here](https://developers.openshift.com/en/getting-started-debian-ubuntu.html#client-tools-gem)
+Before we can start building the application, we need to have an OpenShift free or paid account and RedHat client tools(rhc) installed. For instructions how to install rhc please read [Getting Started with OpenShift Online](https://developers.openshift.com/en/getting-started-overview.html).
 
 # Step 1: Create DIY application
 Setup connection to OpenShift Broker
