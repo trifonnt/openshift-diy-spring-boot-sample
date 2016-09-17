@@ -14,6 +14,6 @@ public class Ping {
 	@RequestMapping(method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	public @ResponseBody String getPing() {
-		return "{ \"ping\": pong}";
+		return "{ \"ping\": \"pong\" }";
 	}
 }
