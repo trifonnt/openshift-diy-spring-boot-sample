@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import java.util.List;
 
 @RepositoryRestResource(path = "people", collectionResourceRel = "person", itemResourceRel = "person")
-public interface PeopleRepository extends PagingAndSortingRepository<Person, Integer> {
+public interface PeopleRepository extends PagingAndSortingRepository<Person, Long> {
 
 	@RestResource(path = "byLastName")
 	List<Person> findByLastName(@Param("lastName") String lastName);

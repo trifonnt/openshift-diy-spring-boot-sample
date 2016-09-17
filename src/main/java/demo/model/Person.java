@@ -11,7 +11,7 @@ public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	protected Integer id;
+	protected long id;
 
 	@Column(name = "first_name")
 	@NotEmpty
@@ -35,10 +35,10 @@ public class Person {
 	private String telephone;
 
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-	public Integer getId() {
+	public long getId() {
 		return id;
 	}
 
